@@ -38,6 +38,7 @@ const Team = () => {
         <a
           href="https://github.com/sathvikkreddy/public-pulse"
           className="underline decoration-solid text-blue-600"
+          target="_blank"
         >
           frontend - source code
         </a>
