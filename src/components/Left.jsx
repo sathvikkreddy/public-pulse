@@ -1,6 +1,6 @@
 import React from "react";
 
-const Left = () => {
+const Left = ({ data }) => {
   return (
     <div className="flex flex-col justify-between w-6/12">
       <div className="h-2/5 flex flex-row justify-between ">
@@ -10,7 +10,7 @@ const Left = () => {
             Rating
           </div>
           <div className="flex justify-center font-medium text-8xl h-4/5 py-4">
-            3.5
+            {data.rating}
           </div>
         </div>
         {/* keywords */}
@@ -19,11 +19,18 @@ const Left = () => {
             Keywords
           </div>
           <div className="grid grid-cols-3 gap-4 h-1/5 p-4">
-            <div className="flex justify-center text-lg">ewdwjhgfyg</div>
+            {/* <div className="flex justify-center text-lg">ewdwjhgfyg</div>
             <div className="flex justify-center text-lg">weuyg</div>
             <div className="flex justify-center text-lg">vedwsf</div>
             <div className="flex justify-center text-lg">0fwedvs4</div>
-            <div className="flex justify-center text-lg">0dsf5</div>
+            <div className="flex justify-center text-lg">0dsf5</div> */}
+            {data.keywords.map((keyword) => {
+              return (
+                <div key={keyword} className="flex justify-center text-lg">
+                  {keyword}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -32,12 +39,7 @@ const Left = () => {
         <div className="flex justify-center font-medium text-xl h-1/5 py-4">
           Verdict
         </div>
-        <div className="text-lg h-4/5 py-4 ">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint,
-          excepturi, vitae error dolorum ipsum consectetur optio labore odit
-          repudiandae reprehenderit nobis at facilis! Ab, animi suscipit
-          sapiente dignissimos ratione quisquam!
-        </div>
+        <div className="text-lg h-4/5 py-4 ">{data.verdict}</div>
       </div>
     </div>
   );

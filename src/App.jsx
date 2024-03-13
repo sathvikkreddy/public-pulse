@@ -1,18 +1,18 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Appbar from "./components/Appbar";
-import InputBox from "./components/InputBox";
-import Analysis from "./components/Analysis";
-import sampleData from "./assets/sample-response-data";
+import Dashboard from "./pages/Dashboard";
+import Team from "./pages/Team";
 
 function App() {
-  const handleClick = () => {};
-  const [data, setData] = useState(sampleData);
   return (
-    <div className="flex flex-col h-screen">
+    <BrowserRouter>
       <Appbar />
-      <InputBox onclick={handleClick} />
-      <Analysis />
-    </div>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/team" element={<Team />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

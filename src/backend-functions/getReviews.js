@@ -3,7 +3,7 @@ import cheerio from "cheerio";
 
 export default async function getReviews(url) {
   try {
-    const response = await axios.get(url);
+    const response = await axios.get(`${CORS_PROXY}${url}`);
     const $ = cheerio.load(response.data);
     const reviews = [];
 
