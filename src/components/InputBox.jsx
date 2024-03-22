@@ -19,7 +19,7 @@ const InputBox = ({ setData, setProgress }) => {
       console.log("generating ...");
       setProgress(2);
       const generateResponse = await axios.post(
-        `https://review-analyzer-gemini.vercel.app/generate`,
+        `https://review-analyzer-five.vercel.app/generate`,
         reviewResponseData
       );
       const generateResponseData = generateResponse.data;
